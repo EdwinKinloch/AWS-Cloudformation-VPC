@@ -1,0 +1,17 @@
+---
+AWSTemplateFormatVersion: "version date"
+
+Description:
+  String
+
+Metadata:
+  template metadata
+
+Parameters:
+  set of parameters
+
+Resources:
+  set of resources
+
+Outputs:
+  set of outputs
