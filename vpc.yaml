@@ -1,14 +1,56 @@
 ---
-AWSTemplateFormatVersion: "version date"
+AWSTemplateFormatVersion: "2010-09-09"
 
 Description:
-  String
+  This template creates vpc with public and private subnets
 
 Metadata:
   template metadata
 
 Parameters:
-  set of parameters
+  VpcCIDR:
+    Default: 10.0.0.0/16
+    Description: Please enter IP range (CIDER notation) for this VPC
+    Type: String
+
+  PublicSubnet1CIDR:
+    Default: 10.0.0.0/24
+    Description: Please enter IP range (CIDER notation) for the public subnet one
+    Type: String
+
+  PublicSubnet2CIDR:
+    Default: 10.0.1.0/24
+    Description: Please enter IP range (CIDER notation) for the public subnet two
+    Type: String
+
+  PrivateSubnet1CIDR:
+    Default: 10.0.2.0/24
+    Description: Please enter IP range (CIDER notation) for the private subnet one
+    Type: String
+
+  PrivateSubnet2CIDR:
+    Default: 10.0.3.0/24
+    Description: Please enter IP range (CIDER notation) for the private subnet two
+    Type: String
+  PrivateSubnet3CIDR:
+    Default: 10.0.4.0/24
+    Description: Please enter IP range (CIDER notation) for the private subnet three
+    Type: String
+
+  PrivateSubnet4CIDR:
+    Default: 10.0.5.0/24
+    Description: Please enter IP range (CIDER notation) for the private subnet four
+    Type: String
+
+  SSHLocation:
+      AllowedPattern: '(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})'
+      ConstraintDescription: must be a valid IP CIDR range of the form x.x.x.x/x.
+      Default: 0.0.0.0/0
+      Description: The IP address range that can be used to access the web server using SSH.
+      MaxLength: '18'
+      MinLength: '9'
+      Type: String
+
 
 Resources:
   set of resources
