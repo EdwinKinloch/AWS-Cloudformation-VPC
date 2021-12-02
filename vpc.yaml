@@ -141,7 +141,7 @@ Resources:
         MapPublicIpOnLaunch: false
         Tags: 
           - Key: Name 
-            Value: Private Subnet 1
+            Value: Private Subnet 1 | App Tier
         VpcId: !Ref VPC
 
   # Create Private Subnet2
@@ -153,7 +153,7 @@ Resources:
         MapPublicIpOnLaunch: false
         Tags: 
           - Key: Name 
-            Value: Private Subnet 2
+            Value: Private Subnet 2 | App Tier
         VpcId: !Ref VPC
 
   # Create Private Subnet3
@@ -165,7 +165,7 @@ Resources:
         MapPublicIpOnLaunch: false
         Tags: 
           - Key: Name 
-            Value: Private Subnet 3
+            Value: Private Subnet 3 | Database Tier
         VpcId: !Ref VPC
 
   # Create Private Subnet4
@@ -177,7 +177,7 @@ Resources:
         MapPublicIpOnLaunch: false
         Tags: 
           - Key: Name 
-            Value: Private Subnet 4
+            Value: Private Subnet 4 | Database Tier
         VpcId: !Ref VPC
 
 Outputs:
