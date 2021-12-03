@@ -180,5 +180,61 @@ Resources:
             Value: Private Subnet 4 | Database Tier
         VpcId: !Ref VPC
 
+  # Create Security Group for the Application Load Balancer 
+    ALBSecurityGroup:
+      Type: 'AWS::EC2::SecurityGroup'
+      Properties:
+        GroupDescription: Enable HTTP/HTTPs access on port 80/443
+        SecurityGroupIngress:
+          - IpProtocol: tcp
+            FromPort: 80
+            ToPort: 80
+            CidrIp: 0.0.0.0/0
+          - IpProtocol: tcp
+            FromPort: 443
+            ToPort: 443
+            CidrIp: 0.0.0.0/0
+        Tags:
+          - Key: Name
+            Value: ALB Secuirty Group
+      VpcId: !Ref VPC
+
+    SSHSecurityGroup:
+      Type: 'AWS::EC2::SecurityGroup'
+      Properties:
+        GroupDescription: Enable ssh access on port 22
+        SecurityGroupIngress:
+          - IpProtocol: tcp
+            FromPort: 22
+            ToPort: 22
+            ciderIp: !Ref SSHLocation
+        Tags:
+          - Key: Name
+            Value: SSH Secuirty Group
+      VpcId: !Ref VPC
+  
+  # Create Security Group for the Web Server
+    WebServerSecurityGroup:
+      Type: 'AWS::EC2::SecurityGroup'
+      Properties:
+        GroupDescription: Enabled HTTP/HTTPs access via port 80/443 locked down to the load
+        SecurityGroupIngress:
+          - IpProtocol:
+            FromPort: 
+            ToPort: 
+            SourceSecurityGroupId:
+          - IpProtocol:
+            FromPort:
+            ToPort:
+            SourceSecurityGroupId:
+          - IpProtocol:
+            FromPort:
+            ToPort:
+            SourceSecurityGroupId:
+        Tags:
+          - Key:
+            Value:
+        VpcId:
+
 Outputs:
   set of outputs
